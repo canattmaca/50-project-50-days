@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //api
+      // xml ( veri taşıma formatı )
+      // json ( bizim javascript de kullandığımız)
+
+      const request = new XMLHttpRequest()
+      request.open('GET', 'https://www.fishwatch.gov/api/species')
+      request.send()
+
+      //async
+      request.addEventListener('load', function () {
+        const data = this.responseText
+        console.log(typeof data)
+        console.log(data)
+        //string bilginin jsona çevrilmesi gerekiyor
+      })
+
+      // callback,promise,async-await
+    </script>
+  </body>
+</html>

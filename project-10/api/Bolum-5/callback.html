@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //login => username
+      //post
+      //create-post
+
+      // sipariş
+      // sipariş hazırlama
+      console.log('start')
+
+      const login = (username, passward, callback) => {
+        setTimeout(() => {
+          callback({
+            userAdi: username,
+            passward: passward,
+            gmail: 'canattmaca@gmail.com',
+          })
+        }, 1000)
+      }
+      const getPostByUserName = (username, callback) => {
+        setTimeout(() => {
+          callback(['post1', 'post2', 'post3'])
+        }, 1000)
+      }
+      const getPostDetails = (posts, callback) => {
+        setTimeout(() => {
+          callback('post1 Details')
+        }, 1000)
+      }
+      // const user = login('can', 1234, (user) => {
+      //   console.log(user)
+      // })
+      login('can', 1234, (user) => {
+        console.log(user)
+
+        getPostByUserName(user.userAdi, (posts) => {
+          console.log(posts)
+
+          getPostDetails(posts[0], (postDetails) => {
+            console.log(postDetails)
+          })
+        })
+      })
+      console.log('end')
+      // callback,promise,async-await
+    </script>
+  </body>
+</html>
